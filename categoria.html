@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <title>AhorrADAS | Balance</title>
+    <title>AhorrADAS | Categoria</title>
 </head>
 
 <body>
-
     <header>
         <nav class="navbar is-spaced is-primary">
             <div class="navbar-logo ml">
-                <h1 class="title is-size-1">
+                <h1 class="title is-1">
                     <a href="" class="has-text-white-bis">
                         <i class="fas fa-wallet mr-2"></i>
                         AhorrADAS
@@ -53,134 +52,47 @@
         </nav>
     </header>
 
-    <main class="section  is-centered columns has-background-white-ter">
+    <main class="is-centered columns has-background-white-ter pb-5 pt-5">
+        <div class="column is-three-fifths">
 
-        <div class="column is-3">
-            <div class="box">
-
-                <header>
-                    <h2 class="title is-size-2 has-text-weight-bold">Balance</h2>
+            <section class="box">
+                <header class="mb-5">
+                    <h2 class="title is-size-2 has-text-weight-bold ">Categoria</h2>
                 </header>
 
-                <section class="section columns is-justify-content-space-around">
-                    <div class="column is-size-5">
-                        <div>Ganancias</div>
-                        <div>Gastos</div>
-                        <div>Total</div>
+                <div id="Ingreso-datos" class="columns is-vcentered is-align-items-flex-end">
+                    <label for=" nombre-categoria" class="column">
+                        <h4 class="title is-size-4 m-0">Nombre</h4>
+                        <input class="input is-align-content-end" type="text" name="" id="nombre-categoria">
+                    </label>
+
+                    <div class="column is-narrow">
+                        <button class="button is-success">Agregar</button>
                     </div>
 
-                    <div class="column is-narrow is-size-5">
-                        <div><span id="ganancias" class="has-text-primary">$50000</span></div>
-                        <div><span id="gastos" class="has-text-danger">$0</span></div>
-                        <div><span id="total" class="has-text-weight-semibold">$0</span></div>
-                    </div>
+                </div>
 
+                <section class="contaniner-categories mb-5 mt-5">
+                    <div class="categoria columns is-align-items-center">
+                        <div class="etiqueta-categoria column">
+                            <span class="tag is-primary is-light is-size-6">comida</span>
+                        </div>
+
+                        <div class="acciones is-narrow column">
+                            <button class="button is-white ">Eliminar</button>
+                            <button class="button is-white">Editar</button>
+                        </div>
+                    </div>
                 </section>
 
-            </div>
+            </section>
 
-            <div class="box">
-                <header class="columns is-align-items-center">
-                    <div class="column">
-                        <h4 class="title is-4 as-text-weight-bold">Filtros</h4>
-                    </div>
 
-                    <div class="column">
-                        <button class="button has-text-link is-white ">Ocultar
-                            filtros</button>
-                    </div>
-                </header>
 
-                <div class="container">
-
-                    <fieldset class="field">
-                        <label class="label" for="tipo">
-                            <p class="has-text-weight-bold">Tipo</p>
-                            <div class="select is-fullwidth">
-                                <select name="tipo" id="tipo">
-                                    <option value="">Todos</option>
-                                    <option value="gastos">Gasto</option>
-                                    <option value="ganancias">Ganancias</option>
-                                </select>
-                            </div>
-
-                        </label>
-                    </fieldset>
-
-                    <fieldset class="field">
-                        <label for="categoria">
-                            <p class="has-text-weight-bold">Categoria</p>
-                            <div class="select is-fullwidth">
-                                <select name="categoria" id="categoria">
-                                    <option value="">Todos</option>
-                                    <option value="comida">Comida</option>
-                                    <option value="servicios">Servicios</option>
-                                    <option value="salidas">Salidas</option>
-                                    <option value="educacion">Educacion</option>
-                                    <option value="transporte">Transporte</option>
-                                    <option value="trabajo">Trabajo</option>
-                                </select>
-                            </div>
-
-                        </label>
-                    </fieldset>
-
-                    <fieldset class="field">
-                        <label for="fecha">
-                            <p class="has-text-weight-bold">Desde</p>
-                            <input class="input" type="date" name="fecha" id="fecha">
-                        </label>
-                    </fieldset>
-
-                    <fieldset class="field">
-                        <label for="orden">
-                            <p class="has-text-weight-bold">Ordenar</p>
-                            <div class="select is-fullwidth">
-                                <select name="orden" id="orden">
-                                    <option value="mas-reciente">Mas reciente</option>
-                                    <option value="menos-reciente">Menos reciente</option>
-                                    <option value="mayor-monto">Mayor monto</option>
-                                    <option value="menor-monto">Menor monto</option>
-                                    <option value="ascendente">A/Z</option>
-                                    <option value="descendente">Z/A</option>
-                                </select>
-                            </div>
-                        </label>
-                    </fieldset>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="column is-7">
-            <div class="box">
-                <header class="columns is-align-items-center is-justify-content-space-between">
-                    <div class="column">
-                        <h3 class="title is-size-3 as-text-weight-large has-text-weight-bold">Operaciones</h3>
-                    </div>
-                    <div class="column is-narrow">
-                        <button id="btn-nueva-operacion" class="button is-primary has-text-weight-semibold">+ Nueva
-                            operacion</button>
-                    </div>
-                </header>
-
-                <div class="container">
-                    <figure class="image is-3by1">
-                        <img src="imagenes/img_money.svg" alt="wallet">
-                    </figure>
-                    <div class="mb-5 mt-5">
-                        <h4 class="title is-4 has-text-centered m-1">Sin resultados</h4>
-                        <p class="has-text-centered">Cambia los filtros o agrega operaciones</p>
-                    </div>
-                    <div class=""></div>
-                </div>
-            </div>
         </div>
 
 
     </main>
-
-
 </body>
 
 </html>
